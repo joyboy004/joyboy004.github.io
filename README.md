@@ -49,11 +49,11 @@
 </head>
 <body>
 
-  <form>
+  <form action="My Family Form.html" method="get">
     <h2>Family Registration Form</h2>
 
     <label for="fatherName">Father's Name:</label>
-    <input type="text" id="fatherName" name="fatherName" required>
+    <input type="text" id="fatherName" name="fatherName" placeholder="fatherName"required>
 
     <label for="motherName">Mother's Name:</label>
     <input type="text" id="motherName" name="motherName" required>
