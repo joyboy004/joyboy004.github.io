@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Page</title>
+    <style>
+        h {
+            font-size: 30px;
+            padding-left: 20px;
+            padding-bottom: 80px;
+            margin: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        #joy {
+            text-align: center;
+            font-family:
+        }
+        
+        table {
+            margin: auto;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .container-1,
+        .container-3,
+        .container-5,
+        .container-7,
+        .container-9,
+        .container-11,
+        .container-13,
+        .container-15,
+        .container-17,
+        .container-19 {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .container-2,
+        .container-4,
+        .container-6,
+        .container-8,
+        .container-10,
+        .container-12,
+        .container-14,
+        .container-16,
+        .container-18,
+        .container-20 {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        p {
+            margin: 5px 0;
+        }
+    </style>
+
+</head>
+
+<body style="font-family: Arial, sans-serif;  padding: 20px; font-size:30px">
+    <h1>WELCOME</h1>
+
+    <p id="joy"> HERE'S ALL THE INFORMATION ABOUT YOU </p>
+
+
+    <table>
+        <tr>
+            <td>
+                <div class="container-1">
+                    <div class="container-2">
+                        <p>Full Name</p>
+                    </div>
+                    <p>: <span id="display-name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container-3">
+                    <div class="container-4">
+                        <p>Phone Number</p>
+                    </div>
+                    <p>: <span id="display-phone_number"></span></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="container-5">
+                    <div class="container-6">
+                        <p>Email Address</p>
+                    </div>
+                    <p>: <span id="display-email"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container-7">
+                    <div class="container-8">
+                        <p>Residential Address</p>
+                    </div>
+                    <p>: <span id="display-address"></span></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="container-9">
+                    <div class="container-10">
+                        <p>Age</p>
+                    </div>
+                    <p>: <span id="display-age"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container-11">
+                    <div class="container-12">
+                        <p>Blood Group</p>
+                    </div>
+                    <p>: <span id="display-blood_group"></span></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="container-13">
+                    <div class="container-14">
+                        <p>Spouse Name</p>
+                    </div>
+                    <p>: <span id="display-spouse_name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container-15">
+                    <div class="container-16">
+                        <p>No. Children</p>
+                    </div>
+                    <p>: <span id="display-offspring"></span></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="container-17">
+                    <div class="container-18">
+                        <p>Father's Name</p>
+                    </div>
+                    <p>: <span id="display-fathers_name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container-19">
+                    <div class="container-20">
+                        <p>Mother's Name</p>
+                    </div>
+                    <p>: <span id="display-mothers_name"></span></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('full_name');
+        const number = urlParams.get('phone_number');
+        const email = urlParams.get('email');
+        const address = urlParams.get('address');
+        const age = urlParams.get('age');
+        const blood_group = urlParams.get('blood_group');
+        const spouse_name = urlParams.get('spouse_name');
+        const offspring = urlParams.get('offspring');
+        const fathers_name = urlParams.get('fathers_name');
+        const mothers_name = urlParams.get('mothers_name');
+        document.getElementById('display-name').textContent = name || 'Not Provided';
+        document.getElementById('display-phone_number').textContent = number || 'Not Provided';
+        document.getElementById('display-email').textContent = email || 'Not Provided';
+        document.getElementById('display-address').textContent = address || 'Not Provided';
+        document.getElementById('display-age').textContent = age || 'Not Provided';
+        document.getElementById('display-blood_group').textContent = blood_group || 'Not Provided';
+        document.getElementById('display-spouse_name').textContent = spouse_name || 'Not Provided';
+        document.getElementById('display-offspring').textContent = offspring || 'Not Provided';
+        document.getElementById('display-age').textContent = age || 'Not Provided';
+        document.getElementById('display-fathers_name').textContent = fathers_name || 'Not Provided';
+        document.getElementById('display-mothers_name').textContent = mothers_name || 'Not Provided';
+    </script>
+</body>
+
+</html>
