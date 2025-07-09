@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f7f0ff, #d8cfe6);
+            padding: 20px;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #6b4c8b;
+            margin-bottom: 10px;
+        }
+        
+        #joy {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        table {
+            margin: auto;
+            width: 95%;
+            max-width: 900px;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+        
+        td {
+            vertical-align: top;
+        }
+        
+        .container {
+            background-color: #ffffffee;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WELCOME</h1>
+    <p id="joy">HERE'S ALL THE INFORMATION ABOUT YOU</p>
+
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Full Name</div>
+                    <p>: <span id="display-name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">Phone Number</div>
+                    <p>: <span id="display-phone_number"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Email Address</div>
+                    <p>: <span id="display-email"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">Residential Address</div>
+                    <p>: <span id="display-address"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Age</div>
+                    <p>: <span id="display-age"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">Blood Group</div>
+                    <p>: <span id="display-blood_group"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Spouse Name</div>
+                    <p>: <span id="display-spouse_name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">No. of Children</div>
+                    <p>: <span id="display-offspring"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Father's Name</div>
+                    <p>: <span id="display-fathers_name"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">Mother's Name</div>
+                    <p>: <span id="display-mothers_name"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <div class="label">Education Status</div>
+                    <p>: <span id="display-education_status"></span></p>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <div class="label">Occupation</div>
+                    <p>: <span id="display-occupation"></span></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="container">
+                    <div class="label">Hobby</div>
+                    <p>: <span id="display-hobby"></span></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const fields = {
+            'display-name': 'full_name',
+            'display-phone_number': 'phone_number',
+            'display-email': 'email',
+            'display-address': 'address',
+            'display-age': 'age',
+            'display-blood_group': 'blood_group',
+            'display-spouse_name': 'spouse_name',
+            'display-offspring': 'offspring',
+            'display-fathers_name': 'fathers_name',
+            'display-mothers_name': 'mothers_name',
+            'display-education_status': 'education_status',
+            'display-occupation': 'occupation',
+            'display-hobby': 'hobby'
+        };
+
+        for (const [id, key] of Object.entries(fields)) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = urlParams.get(key) || 'Not Provided';
+            }
+        }
+    </script>
+</body>
+
+</html>
