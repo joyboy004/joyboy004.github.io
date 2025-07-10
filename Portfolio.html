@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #4CAF50, #2E7D32);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .menu-toggle {
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background-color: #4CAF50;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+      }
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px 20px;
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .about-text h2,
+    #skills h2,
+    #contact h2 {
+      font-size: 2rem;
+      color: #2E7D32;
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .skill-bar {
+      width: 0;
+      height: 12px;
+      background-color: #3498db;
+      transition: width 1s ease-in-out;
+      border-radius: 6px;
+    }
+
+    li {
+      margin-bottom: 25px;
+    }
+
+    form input,
+    form textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #388E3C;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Making your imaginations come to life 💡</p>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container fade-in" id="about">
+    <section class="about-content">
+      <img src="IMG-20250707-WA0034.jpg" alt="My photo" class="profile-img" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! I’m a passionate web developer who loves creating user-friendly websites and cool designs. I enjoy both front-end and back-end development.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="container fade-in">
+    <section id="skills">
+      <h2>My Skills</h2>
+      <ul>
+        <li>
+          HTML & CSS - 90%
+          <div class="skill-bar" data-width="90%"></div>
+        </li>
+        <li>
+          JavaScript - 40%
+          <div class="skill-bar" data-width="40%"></div>
+        </li>
+        <li>
+          Responsive Design - 50%
+          <div class="skill-bar" data-width="50%"></div>
+        </li>
+        <li>
+          Backend with PHP or Python - 70%
+          <div class="skill-bar" data-width="70%"></div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="container fade-in">
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="thanks.html" method="get">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+
+    // Fade-in animation
+    const fadeInOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, fadeInOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      fadeInObserver.observe(el);
+    });
+
+    // Skill bar animation
+    const skillBarObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const width = entry.target.getAttribute('data-width');
+          entry.target.style.width = width;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+      skillBarObserver.observe(bar);
+    });
+  </script>
+</body>
+</html>
